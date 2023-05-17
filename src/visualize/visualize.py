@@ -282,7 +282,7 @@ def viz_clip_text(model, text_grid, epoch, params, folder):
 
 
     print(f"Writing video [{finalpath}]")
-    imageio.mimsave(finalpath, frames, fps=params["fps"])
+    imageio.mimsave(finalpath, frames, duration=params["fps"])
 
 
 def viz_clip_interp(model, datasets, interp_csv, num_stops, epoch, params, folder):
@@ -343,7 +343,7 @@ def viz_clip_interp(model, datasets, interp_csv, num_stops, epoch, params, folde
                                lambda x: str(x), params, w, h, tmp_path, mode='interp')
 
     print(f"Writing video [{finalpath}]")
-    imageio.mimsave(finalpath, frames, fps=params["fps"])
+    imageio.mimsave(finalpath, frames, duration=params["fps"])
 
 
 def viz_clip_edit(model, datasets, edit_csv, epoch, params, folder):
@@ -407,7 +407,7 @@ def viz_clip_edit(model, datasets, edit_csv, epoch, params, folder):
                                lambda x: str(x), params, w, h, tmp_path, mode='edit')
 
     print(f"Writing video [{finalpath}]")
-    imageio.mimsave(finalpath, frames, fps=params["fps"])
+    imageio.mimsave(finalpath, frames, duration=params["fps"])
 
 
 def stack_images_sequence(visu):
